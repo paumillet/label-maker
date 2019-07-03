@@ -1,4 +1,6 @@
 # Label Maker
+This version of Label-Maker has been modified in order to support tiles computation with 4-bands imagery.
+
 ## Data Preparation for Satellite Machine Learning
 
 Label Maker downloads [OpenStreetMap QA Tile]((https://osmlab.github.io/osm-qa-tiles/)) information and satellite imagery tiles and saves them as an [`.npz` file](https://docs.scipy.org/doc/numpy/reference/generated/numpy.savez.html) for use in machine learning training.

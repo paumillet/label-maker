@@ -76,13 +76,14 @@ def get_tile_tif(tile, imagery, folder, imagery_offset):
         window = ((top, bottom), (left, right))
 
         # read the first three bands (assumed RGB) of the TIF into an array
-        data = np.empty(shape=(3, 256, 256)).astype(src.profile['dtype'])
-        for k in (1, 2, 3):
-            src.read(k, window=window, out=data[k - 1], boundless=True)
+        nb_bands = src.count
+        data = np.empty(shape=(256, 256, nb_bands)).astype(src.profile['dtype'])
+        for k in range(1,nb_bands+1):
+            src.read(k, window=window, out=data[:,:,k - 1], boundless=True)
 
         # save
-        tile_img = op.join(folder, '{}{}'.format(tile, '.jpg'))
-        img = Image.fromarray(np.moveaxis(data, 0, -1), mode='RGB')
+        tile_img = op.join(folder, '{}{}'.format(tile, '.tif'))
+        img = Image.fromarray(data)
         img.save(tile_img)
 
     return tile_img

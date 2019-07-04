@@ -1,5 +1,6 @@
 # Label Maker
-This version of Label-Maker has been modified in order to support tiles computation with 4-bands imagery.
+**<font color="red">This version of Label-Maker has been modified from the [one offered by DevelopmentSeed](https://github.com/developmentseed/label-maker), in order to support 4-bands (or more) imagery for tiles computation and data preparation.</font>**  
+4 bands satellite images (Near-Infrared + RGB) are nowadays more and more accessible and near-infrared band usually adds valuable information to datasets.
 
 ## Data Preparation for Satellite Machine Learning
 
